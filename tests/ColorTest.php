@@ -23,6 +23,8 @@ class ColorTest extends TestCase
             array('rgba(255, 255, 255, 0.5) ', 'rgba(255, 255, 255, 0.5)', 'toRgba'),
             array('rgba(255, 255, 255, 1) ', 'rgba(255, 255, 255, 1)', 'toRgba'),
             array('#ffffff', 'rgba(255, 255, 255, 1)', 'toRgba'),
+            array('white', '#ffffff', 'toHex'),
+            array('white', 'rgba(255, 255, 255, 1)', 'toRgba'),
         );
     }
 

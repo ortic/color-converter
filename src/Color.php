@@ -1,6 +1,7 @@
 <?php
 namespace Ortic\ColorConverter;
 
+use Ortic\ColorConverter\Colors\Named;
 use Ortic\ColorConverter\Colors\Rgb;
 use Ortic\ColorConverter\Colors\Hex;
 use Ortic\ColorConverter\Colors\Rgba;
@@ -71,6 +72,7 @@ class Color
             Rgb::class,
             Hex::class,
             Rgba::class,
+            Named::class,
         ];
 
         foreach ($classes as $class) {
