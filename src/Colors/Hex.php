@@ -4,7 +4,7 @@ namespace Ortic\ColorConverter\Colors;
 use Ortic\ColorConverter\Color;
 
 class Hex extends Color
-{    
+{
     public static function fromString($colorString)
     {        
         if ($colorString[0] !== '#') {

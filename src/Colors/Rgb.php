@@ -4,7 +4,8 @@ namespace Ortic\ColorConverter\Colors;
 use Ortic\ColorConverter\Color;
 
 class Rgb extends Color
-{    
+{
+
     public static function fromString($colorString)
     {        
         $matches = [];
@@ -19,4 +20,5 @@ class Rgb extends Color
 
         return $object;
     }
+
 }

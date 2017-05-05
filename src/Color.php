@@ -8,7 +8,13 @@ class Color
 {
 
     /** @var int */
-    protected $red, $green, $blue;
+    protected $red;
+    
+    /** @var int */
+    protected $green;
+    
+    /** @var int */
+    protected $blue;
 
     public function getRed(): int
     {
@@ -53,7 +59,7 @@ class Color
                 return $class::fromString($colorString);
             }
             catch (\Exception $ex) {
-
+                // skip this, we try to find a working method and raise an exception is nothing works
             }
         }
 
