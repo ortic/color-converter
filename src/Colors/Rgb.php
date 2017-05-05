@@ -14,9 +14,10 @@ class Rgb extends Color
         }
 
         $object = new self;
-        $object->setRed((int)$matches[1]);
-        $object->setGreen((int)$matches[2]);
-        $object->setBlue((int)$matches[3]);
+        $object
+            ->setRed((int)$matches[1])
+            ->setGreen((int)$matches[2])
+            ->setBlue((int)$matches[3]);
 
         return $object;
     }
