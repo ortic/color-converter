@@ -10,7 +10,7 @@ class Hsl extends Color
     public static function fromString($colorString)
     {
         $matches = [];
-        if (!preg_match('/hsl[ ]*\([ ]*(\d{1,3})[ ]*,[ ]*(\d{1,3}\%)[ ]*,[ ]*(\d{1,3}\%)[ ]*\)/i', $colorString, $matches)) {
+        if (!preg_match('/hsl[ ]*\([ ]*(\d{1,3})[ ]*,[ ]*(\d{1,3})%[ ]*,[ ]*(\d{1,3})%[ ]*\)/i', $colorString, $matches)) {
             throw new \Exception("Invalid HSL string: $colorString");
         }
 
