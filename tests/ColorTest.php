@@ -25,6 +25,10 @@ class ColorTest extends TestCase
             array('#ffffff', 'rgba(255, 255, 255, 1)', 'toRgba'),
             array('white', '#ffffff', 'toHex'),
             array('white', 'rgba(255, 255, 255, 1)', 'toRgba'),
+            array('hsl(0, 100%, 50%)', '#ff0000', 'toHex'),
+            array('hsl(255, 100%, 50%)', '#4000ff', 'toHex'),
+            array('hsl(100, 100%, 50%)', '#55ff00', 'toHex'),
+            array('hsl(50, 40%, 30%)', '#6b612e', 'toHex'),
         );
     }
 
