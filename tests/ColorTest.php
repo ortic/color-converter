@@ -29,6 +29,11 @@ class ColorTest extends TestCase
             array('hsl(255, 100%, 50%)', '#4000ff', 'toHex'),
             array('hsl(100, 100%, 50%)', '#55ff00', 'toHex'),
             array('hsl(50, 40%, 30%)', '#6b612e', 'toHex'),
+            array('hsl(10, 40%, 30%)', '#6b382e', 'toHex'),
+            array('hsl(120, 10%, 20%)', '#2e382e', 'toHex'),
+            array('hsl(180, 20%, 80%)', '#c2d6d6', 'toHex'),
+            array('hsl(300, 20%, 80%)', '#d6c2d6', 'toHex'),
+            array('hsl(360, 20%, 100%)', '#ffffff', 'toHex'),
         );
     }
 
