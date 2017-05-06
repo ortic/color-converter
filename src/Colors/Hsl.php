@@ -24,14 +24,6 @@ class Hsl extends Color
 
         $v = ($lightness <= 0.5) ? ($lightness * (1.0 + $saturation)) : ($lightness + $saturation - $lightness * $saturation);
         if ($v > 0) {
-            $m = null;
-            $sv = null;
-            $sextant = null;
-            $fract = null;
-            $vsf = null;
-            $mid1 = null;
-            $mid2 = null;
-
             $m = $lightness + $lightness - $v;
             $sv = ($v - $m) / $v;
             $hue *= 6;
