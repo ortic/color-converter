@@ -1,4 +1,5 @@
 <?php
+
 namespace Ortic\ColorConverter;
 
 use Ortic\ColorConverter\Colors\Hsl;
@@ -7,15 +8,15 @@ use Ortic\ColorConverter\Colors\Rgb;
 use Ortic\ColorConverter\Colors\Hex;
 use Ortic\ColorConverter\Colors\Rgba;
 
-class Color 
+class Color
 {
 
     /** @var int */
     protected $red;
-    
+
     /** @var int */
     protected $green;
-    
+
     /** @var int */
     protected $blue;
 
@@ -80,8 +81,7 @@ class Color
         foreach ($classes as $class) {
             try {
                 return $class::fromString($colorString);
-            }
-            catch (\Exception $ex) {
+            } catch (\Exception $ex) {
                 // skip this, we try to find a working method and raise an exception if nothing works
             }
         }
@@ -110,5 +110,42 @@ class Color
     public function toRgba()
     {
         return "rgba({$this->red}, {$this->green}, {$this->blue}, $this->alpha)";
+    }
+
+    public function toHsl()
+    {
+        $red = $this->getRed() / 255;
+        $green = $this->getGreen() / 255;
+        $blue = $this->getBlue() / 255;
+
+        $max = max($red, $green, $blue);
+        $min = min($red, $green, $blue);
+        $chroma = $max - $min;
+
+        $lightness = ($max + $min) / 2;
+
+        $hue = 0;
+        $saturation = 0;
+
+        if ($chroma > 0) {
+            if ($max == $red && $max != $green) {
+                $hue += ($green - $blue) / $chroma;
+            }
+            if ($max == $green && $max != $blue) {
+                $hue += (2 + ($blue - $red) / $chroma);
+            }
+            if ($max == $blue && $max != $red) {
+                $hue += (4 + ($red - $green) / $chroma);
+            }
+
+            $hue /= 6;
+            $saturation = 1 - abs(2 * $lightness - 1);
+        }
+
+        $hue *= 360;
+        $saturation *= 100;
+        $lightness *= 100;
+
+        return "hsl({$hue}, {$saturation}%, {$lightness}%)";
     }
 }
